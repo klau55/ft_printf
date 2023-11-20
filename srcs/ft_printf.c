@@ -6,7 +6,7 @@
 /*   By: nkarpilo <nkarpilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 17:37:30 by nkarpilo          #+#    #+#             */
-/*   Updated: 2023/11/20 15:23:23 by nkarpilo         ###   ########.fr       */
+/*   Updated: 2023/11/20 16:16:54 by nkarpilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,9 @@ int	ft_set_format(va_list args, const char format, int total)
 	else if (format == 'x' || format == 'X')
 		total += ft_print_hex(va_arg(args, int), total, format, args);
 	else if (format == 'p')
-		total += ft_print_ptr(va_arg(args, void *), args, total);
+		total += ft_print_ptr(va_arg(args, void *), args);
 	else if (format == 'u')
-		return (0);
+		total = ft_print_uint(va_arg(args, unsigned int), args);
 	return (total);
 }
 

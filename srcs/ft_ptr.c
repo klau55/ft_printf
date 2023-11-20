@@ -6,7 +6,7 @@
 /*   By: nkarpilo <nkarpilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 15:08:53 by nkarpilo          #+#    #+#             */
-/*   Updated: 2023/11/20 15:11:21 by nkarpilo         ###   ########.fr       */
+/*   Updated: 2023/11/20 16:14:00 by nkarpilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_ptr_puthex(char *str, unsigned long long nb, int *pos)
 	}
 }
 
-int	ft_print_ptr(void *ptr, va_list args, int total)
+int	ft_print_ptr(void *ptr, va_list args)
 {
 	unsigned long long int	ptr_val;
 	char					*str;
@@ -52,8 +52,8 @@ int	ft_print_ptr(void *ptr, va_list args, int total)
 	if (!str)
 		return (-1);
 	str[0] = '0';
-	str[1] = '1';
-	pos = 0;
+	str[1] = 'x';
+	pos = 2;
 	ft_ptr_puthex(str, ptr_val, &pos);
 	str[pos] = '\0';
 	if (ft_print_str(str, 1, args) < 0)
@@ -62,6 +62,5 @@ int	ft_print_ptr(void *ptr, va_list args, int total)
 		return (-1);
 	}
 	free (str);
-	total = total + (len + 2);
-	return (total);
+	return (len + 2);
 }
