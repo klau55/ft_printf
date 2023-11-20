@@ -6,7 +6,7 @@
 /*   By: nkarpilo <nkarpilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 15:55:54 by nkarpilo          #+#    #+#             */
-/*   Updated: 2023/11/20 16:14:57 by nkarpilo         ###   ########.fr       */
+/*   Updated: 2023/11/20 16:30:33 by nkarpilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_uint_to_str(char *str, unsigned int n, int *pos)
 	else
 	{
 		ft_uint_to_str(str, (n / 10), pos);
-		ft_char_cpy(str, (n % 10), pos);
+		ft_char_cpy(str, ((n % 10) + '0'), pos);
 	}
 }
 
