@@ -6,7 +6,7 @@
 /*   By: nkarpilo <nkarpilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 15:08:21 by nkarpilo          #+#    #+#             */
-/*   Updated: 2023/11/20 15:29:14 by nkarpilo         ###   ########.fr       */
+/*   Updated: 2023/11/20 16:47:28 by nkarpilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ft_puthex(char *str, unsigned int nb, int *pos, char format)
 	}
 }
 
-int	ft_print_hex(unsigned int n, int total, const char format, va_list args)
+int	ft_print_hex(unsigned int n, const char format, va_list args)
 {
 	char	*str;
 	int		len;
@@ -60,7 +60,7 @@ int	ft_print_hex(unsigned int n, int total, const char format, va_list args)
 	pos = 0;
 	ft_puthex(str, n, &pos, format);
 	str[pos] = '\0';
-	if (ft_print_str(str, total, args) < 0)
+	if (ft_print_str(str, args) < 0)
 	{
 		free(str);
 		return (-1);

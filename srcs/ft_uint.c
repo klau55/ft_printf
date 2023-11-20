@@ -6,7 +6,7 @@
 /*   By: nkarpilo <nkarpilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 15:55:54 by nkarpilo          #+#    #+#             */
-/*   Updated: 2023/11/20 16:30:33 by nkarpilo         ###   ########.fr       */
+/*   Updated: 2023/11/20 16:52:41 by nkarpilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	ft_print_uint(unsigned int n, va_list args)
 	pos = 0;
 	ft_uint_to_str(str, n, &pos);
 	str[pos] = '\0';
-	if (ft_print_str(str, 1, args) < 0)
+	if (ft_print_str(str, args) < 0)
 	{
 		free(str);
 		return (-1);
