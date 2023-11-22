@@ -6,7 +6,7 @@
 /*   By: nkarpilo <nkarpilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 15:08:40 by nkarpilo          #+#    #+#             */
-/*   Updated: 2023/11/20 16:55:16 by nkarpilo         ###   ########.fr       */
+/*   Updated: 2023/11/20 18:25:50 by nkarpilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,6 @@
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdarg.h>
-# include <stdio.h>
-# include <string.h>
 
 int		ft_print_char(int c);
 int		ft_print_ptr(void *ptr, va_list args);

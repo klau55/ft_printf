@@ -6,7 +6,7 @@
 /*   By: nkarpilo <nkarpilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 17:37:30 by nkarpilo          #+#    #+#             */
-/*   Updated: 2023/11/20 17:15:48 by nkarpilo         ###   ########.fr       */
+/*   Updated: 2023/11/20 18:24:45 by nkarpilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,16 @@ int	ft_set_format(va_list args, const char format)
 	return (0);
 }
 
+char	*ft_strchr(const char *s, int c)
+{
+	while (*s != (char)c && *s != '\0')
+		s++;
+	if (*s == (char)c)
+		return ((char *)s);
+	else
+		return (NULL);
+}
+
 int	ft_printf(const char *format, ...)
 {
 	va_list	args;
@@ -43,7 +53,7 @@ int	ft_printf(const char *format, ...)
 	va_start(args, format);
 	while (format[++i])
 	{
-		if (format[i] == '%' && strchr("udcspixX%", format[i + 1]))
+		if (format[i] == '%' && ft_strchr("udcspixX%", format[i + 1]))
 		{
 			temp = ft_set_format(args, format[++i]);
 			if (temp < 0)
