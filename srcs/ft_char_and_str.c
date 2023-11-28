@@ -6,7 +6,7 @@
 /*   By: nkarpilo <nkarpilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 17:08:53 by nkarpilo          #+#    #+#             */
-/*   Updated: 2023/11/22 19:00:15 by nkarpilo         ###   ########.fr       */
+/*   Updated: 2023/11/28 15:58:28 by nkarpilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,15 @@ int	ft_print_char(int c)
 	return (write(1, &c, 1));
 }
 
-int	ft_print_str(char *s, va_list args)
+int	ft_print_str(char *s)
 {
 	int	len;
 
 	len = 0;
 	if (s == NULL)
 	{
-		if (ft_print_str("(null)", args) < 0)
+		if (ft_print_str("(null)") < 0)
 		{
-			va_end(args);
 			return (-1);
 		}
 		return (6);
@@ -35,7 +34,6 @@ int	ft_print_str(char *s, va_list args)
 	{
 		if (ft_print_char(*s++) < 0)
 		{
-			va_end(args);
 			return (-1);
 		}
 		len++;

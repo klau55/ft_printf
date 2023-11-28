@@ -6,7 +6,7 @@
 /*   By: nkarpilo <nkarpilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 17:02:52 by nkarpilo          #+#    #+#             */
-/*   Updated: 2023/11/22 18:58:02 by nkarpilo         ###   ########.fr       */
+/*   Updated: 2023/11/28 16:22:49 by nkarpilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_print_num(int d, int total)
 {
 	if (d == -2147483648)
 	{
-		if (ft_print_str("-2147483648", 0) < 0)
+		if (ft_print_str("-2147483648") < 0)
 			return (-1);
 		total = total + 11;
 	}

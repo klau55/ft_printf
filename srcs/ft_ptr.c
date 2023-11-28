@@ -6,7 +6,7 @@
 /*   By: nkarpilo <nkarpilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 15:08:53 by nkarpilo          #+#    #+#             */
-/*   Updated: 2023/11/20 16:52:29 by nkarpilo         ###   ########.fr       */
+/*   Updated: 2023/11/28 16:21:20 by nkarpilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_ptr_puthex(char *str, unsigned long long nb, int *pos)
 	}
 }
 
-int	ft_print_ptr(void *ptr, va_list args)
+int	ft_print_ptr(void *ptr)
 {
 	unsigned long long int	ptr_val;
 	char					*str;
@@ -56,7 +56,7 @@ int	ft_print_ptr(void *ptr, va_list args)
 	pos = 2;
 	ft_ptr_puthex(str, ptr_val, &pos);
 	str[pos] = '\0';
-	if (ft_print_str(str, args) < 0)
+	if (ft_print_str(str) < 0)
 	{
 		free(str);
 		return (-1);
