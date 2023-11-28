@@ -6,7 +6,7 @@
 /*   By: nkarpilo <nkarpilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 15:08:53 by nkarpilo          #+#    #+#             */
-/*   Updated: 2023/11/28 16:21:20 by nkarpilo         ###   ########.fr       */
+/*   Updated: 2023/11/28 17:29:32 by nkarpilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,11 @@ int	ft_hex_long_len(unsigned long long nb)
 		i++;
 	}
 	return (i);
+}
+
+void	ft_char_cpy(char *dest, char src, int *pos)
+{
+	dest[(*pos)++] = src;
 }
 
 void	ft_ptr_puthex(char *str, unsigned long long nb, int *pos)

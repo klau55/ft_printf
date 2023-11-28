@@ -6,16 +6,11 @@
 /*   By: nkarpilo <nkarpilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 15:08:21 by nkarpilo          #+#    #+#             */
-/*   Updated: 2023/11/28 15:43:30 by nkarpilo         ###   ########.fr       */
+/*   Updated: 2023/11/28 17:29:41 by nkarpilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-void	ft_char_cpy(char *dest, char src, int *pos)
-{
-	dest[(*pos)++] = src;
-}
 
 int	ft_print_hex(unsigned int n, const char format)
 {

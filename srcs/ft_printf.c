@@ -6,7 +6,7 @@
 /*   By: nkarpilo <nkarpilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 17:37:30 by nkarpilo          #+#    #+#             */
-/*   Updated: 2023/11/28 16:56:48 by nkarpilo         ###   ########.fr       */
+/*   Updated: 2023/11/28 17:27:44 by nkarpilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,36 +31,22 @@ int	ft_set_format(va_list args, const char format)
 	return (-1);
 }
 
-char	*ft_strchr(const char *s, int c)
+int	ft_processor(va_list args, const char *format)
 {
-	while (*s != (char)c && *s != '\0')
-		s++;
-	if (*s == (char)c)
-		return ((char *)s);
-	else
-		return (NULL);
-}
-
-int	ft_printf(const char *format, ...)
-{
-	va_list	args;
-	int		i;
-	int		total;
-	int		temp;
+	int	i;
+	int	total;
+	int	temp;
 
 	i = -1;
 	total = 0;
-	va_start(args, format);
+	temp = 0;
 	while (format[++i])
 	{
-		if (format[i] == '%' && ft_strchr("udcspixX%", format[i + 1]))
+		if (format[i] == '%')
 		{
 			temp = ft_set_format(args, format[++i]);
 			if (temp < 0)
-			{
-				va_end(args);
 				return (-1);
-			}
 			total += temp;
 		}
 		else if (ft_print_char(format[i]) >= 0)
@@ -68,6 +54,18 @@ int	ft_printf(const char *format, ...)
 		else
 			return (-1);
 	}
+	return (total);
+}
+
+int	ft_printf(const char *format, ...)
+{
+	va_list	args;
+	int		total;
+
+	va_start(args, format);
+	total = ft_processor(args, format);
 	va_end(args);
+	if (total < 0)
+		return (-1);
 	return (total);
 }

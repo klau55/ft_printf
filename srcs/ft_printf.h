@@ -6,7 +6,7 @@
 /*   By: nkarpilo <nkarpilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 15:08:40 by nkarpilo          #+#    #+#             */
-/*   Updated: 2023/11/28 16:21:36 by nkarpilo         ###   ########.fr       */
+/*   Updated: 2023/11/28 17:28:22 by nkarpilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int		ft_uint_num_len(unsigned int n);
 void	ft_char_cpy(char *dest, char src, int *pos);
 int		ft_set_format(va_list args, const char format);
 int		ft_set_option(va_list args, const char format);
+int		ft_processor(va_list args, const char *format);
 int		ft_printf(const char *format, ...);
 
 #endif
