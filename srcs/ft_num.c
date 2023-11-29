@@ -6,13 +6,13 @@
 /*   By: nkarpilo <nkarpilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 17:02:52 by nkarpilo          #+#    #+#             */
-/*   Updated: 2023/11/28 16:22:49 by nkarpilo         ###   ########.fr       */
+/*   Updated: 2023/11/29 15:50:08 by nkarpilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_print_negative(int d, int total)
+int	ft_print_negative(int d, int total)
 {
 	total += ft_print_char('-');
 	if (!total || total < 0)
