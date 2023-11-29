@@ -6,7 +6,7 @@
 /*   By: nkarpilo <nkarpilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 17:37:30 by nkarpilo          #+#    #+#             */
-/*   Updated: 2023/11/29 15:24:08 by nkarpilo         ###   ########.fr       */
+/*   Updated: 2023/11/29 17:32:37 by nkarpilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,15 @@ int	ft_set_format(va_list args, const char format)
 	else if (format == 'd' || format == 'i')
 		return (ft_print_num(va_arg(args, int), 0));
 	else if (format == 's')
-		return (ft_print_str(va_arg(args, char *)));
+		return (ft_print_str(va_arg(args, char *), 0));
 	else if (format == '%')
 		return (ft_print_char('%'));
 	else if (format == 'x' || format == 'X')
-		return (ft_print_hex(va_arg(args, unsigned int), format));
+		return (ft_print_hex(va_arg(args, unsigned int), format, 0));
 	else if (format == 'p')
-		return (ft_print_ptr(va_arg(args, void *)));
+		return (ft_print_ptr(va_arg(args, void *), 0));
 	else if (format == 'u')
-		return (ft_print_uint(va_arg(args, unsigned int)));
+		return (ft_print_uint(va_arg(args, unsigned int), 0));
 	return (-1);
 }
 

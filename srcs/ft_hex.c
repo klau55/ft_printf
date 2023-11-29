@@ -6,15 +6,14 @@
 /*   By: nkarpilo <nkarpilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 15:08:21 by nkarpilo          #+#    #+#             */
-/*   Updated: 2023/11/29 17:19:35 by nkarpilo         ###   ########.fr       */
+/*   Updated: 2023/11/29 17:39:04 by nkarpilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_print_hex(unsigned long n, const char format)
+int	ft_print_hex(unsigned long n, const char format, int total)
 {
-	int			count;
 	const char	*base;
 	int			error;
 
@@ -22,13 +21,12 @@ int	ft_print_hex(unsigned long n, const char format)
 		base = "0123456789ABCDEF";
 	else
 		base = "0123456789abcdef";
-	count = 0;
 	if (n >= 16)
-		count = ft_print_hex(n / 16, format);
-	if (count == -1)
+		total = ft_print_hex(n / 16, format, total);
+	if (total < 0)
 		return (-1);
 	error = write (1, &base[n % 16], 1);
-	if (error == -1)
+	if (error < 0)
 		return (-1);
-	return (count + 1);
+	return (total + 1);
 }
