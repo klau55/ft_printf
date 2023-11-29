@@ -6,7 +6,7 @@
 /*   By: nkarpilo <nkarpilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 15:08:40 by nkarpilo          #+#    #+#             */
-/*   Updated: 2023/11/29 15:50:04 by nkarpilo         ###   ########.fr       */
+/*   Updated: 2023/11/29 17:22:34 by nkarpilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,8 @@ int		ft_print_negative(int d, int total);
 int		ft_print_num(int d, int total);
 int		ft_print_char(int c);
 int		ft_print_str(char *s);
-int		ft_print_hex(unsigned int n, const char format);
+int		ft_print_hex(unsigned long n, const char format);
 int		ft_print_uint(unsigned int n);
-int		ft_hex_long_len(unsigned long long nb);
-void	ft_char_cpy(char *dest, char src, int *pos);
-void	ft_ptr_puthex(char *str, unsigned long long nb, int *pos);
 int		ft_print_ptr(void *ptr);
 
 #endif

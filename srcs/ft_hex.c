@@ -6,13 +6,13 @@
 /*   By: nkarpilo <nkarpilo@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 15:08:21 by nkarpilo          #+#    #+#             */
-/*   Updated: 2023/11/28 17:29:41 by nkarpilo         ###   ########.fr       */
+/*   Updated: 2023/11/29 17:19:35 by nkarpilo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_print_hex(unsigned int n, const char format)
+int	ft_print_hex(unsigned long n, const char format)
 {
 	int			count;
 	const char	*base;
